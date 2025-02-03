@@ -54,12 +54,14 @@ const position = parseGlobal(3343.2045, 10129.96);
 
 ```
 const compass = formatCompass(position);
+// Output: [33.3, 56.6]
 ```
 
 #### formatLoc
 
 ```
 const loc = formatLoc(position);
+// Output: "0xFEFE0040 [182.661621 176.311523 0.000000] 1.000000 0.000000 0.000000 0.000000"
 ```
 
 ### Misc Helpers
@@ -68,12 +70,14 @@ const loc = formatLoc(position);
 
 ```
 const positionIsIndoors = isIndoors(position);
+// Output: true/false
 ```
 
 #### isValidPosition
 
 ```
 const positionIsValid = isValidPosition(position);
+// Output: true/false
 ```
 
 ## Credits
