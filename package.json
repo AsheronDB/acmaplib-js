@@ -1,6 +1,7 @@
 {
-  "name": "acmaplib-js",
+  "name": "@asherondb/acmaplib",
   "version": "0.1.0",
+  "description": "Helper functions for managing game position data for Asheron's Call.",
   "type": "module",
   "files": [
     "dist/*",
