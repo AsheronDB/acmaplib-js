@@ -48,12 +48,6 @@ const position = parseLoc("0xFEFE0040 [182.661621 176.311523 0.000000] 1.000000 
 const position = parseGlobal(3343.2045, 10129.96);
 ```
 
-#### parseGlobal
-
-```
-const position = parseGlobal(3343.2045, 10129.96);
-```
-
 ### Formatting Helpers
 
 #### formatCompass
