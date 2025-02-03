@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "description": "Helper functions for managing game position data for Asheron's Call.",
   "type": "module",
+  "author": "Jesse L.K. Overton <jesse@ovrtn.com> (https://ovrtn.com)",
+  "license": "ISC",
   "files": [
     "dist/*",
     "types/*",
