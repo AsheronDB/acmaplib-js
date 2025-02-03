@@ -1,6 +1,6 @@
 {
   "name": "@asherondb/acmaplib",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "Helper functions for managing game position data for Asheron's Call.",
   "type": "module",
   "author": "Jesse L.K. Overton <jesse@ovrtn.com> (https://ovrtn.com)",
