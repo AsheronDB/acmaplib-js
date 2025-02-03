@@ -8,12 +8,6 @@ import {
 } from "../constants";
 import { Position } from "../Position";
 
-const toObjCellId = (landblockX: number, landblockY: number, cell: number) => {
-  if (!landblockX && !landblockY && !cell)
-    throw new Error("Invalid parameters");
-  return ((landblockX << 24) | (landblockY << 16) | cell) >>> 0;
-};
-
 const northSouthSchema = z.union([
   z.preprocess(
     (val) => {
