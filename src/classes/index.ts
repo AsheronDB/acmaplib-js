@@ -51,16 +51,16 @@ export class Position {
     return this.objCellIdHex.slice(-4);
   }
   get cellX() {
-    return Math.trunc(((this.objCellId & 0xffff) - 1) / CELL_SIDE);
+    return (this.objCellId & 0xffff) / CELL_SIDE;
   }
   get cellY() {
-    return Math.trunc(((this.objCellId & 0xffff) - 1) % CELL_SIDE);
+    return (this.objCellId & 0xffff) % CELL_SIDE;
   }
   get cellGlobalX() {
-    return this.landblockX * CELL_SIDE + this.cellX;
+    return 8 * this.landblockX + Math.floor(this.originX / 24);
   }
   get cellGlobalY() {
-    return this.landblockY * CELL_SIDE + this.cellY;
+    return 8 * this.landblockY + Math.floor(this.originY / 24);
   }
   get globalX() {
     return this.landblockX * LANDBLOCK_WIDTH + this.originX;

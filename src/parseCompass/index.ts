@@ -65,29 +65,31 @@ export const parseCompass = (
     console.error(error);
     throw new Error("Invalid input");
   }
+  const ns = northSouth + COMPASS_SOUTHWEST;
+  const ew = eastWest + COMPASS_SOUTHWEST;
 
-  console.log(northSouth);
-  console.log(eastWest);
+  // 204 = map clicks across dereth
+  // 2040 = number of cells across dereth
+  // 24 = meters per cell
+  //var globalPos = coordinates / 204 * 2040 * 24;
 
-  const globalX = (eastWest + COMPASS_SOUTHWEST) * 240;
-  const globalY = (northSouth + COMPASS_SOUTHWEST) * 240;
-  const blockX = Math.trunc(globalX / BLOCK_LENGTH);
-  const blockY = Math.trunc(globalY / BLOCK_LENGTH);
-  const originX = globalX % BLOCK_LENGTH;
-  const originY = globalY % BLOCK_LENGTH;
-  const cellX = Math.trunc(originX / CELL_LENGTH);
-  const cellY = Math.trunc(originY / CELL_LENGTH);
+  const nsGlobal = ns * 240;
+  const ewGlobal = ew * 240;
+
+  const blockX = ewGlobal / BLOCK_LENGTH;
+  const blockY = nsGlobal / BLOCK_LENGTH;
+
+  const originX = ewGlobal % BLOCK_LENGTH;
+  const originY = nsGlobal % BLOCK_LENGTH;
+
+  const cellX = originX / CELL_LENGTH;
+  const cellY = originY / CELL_LENGTH;
+
   const cell = cellX * CELL_SIDE + cellY + 1;
-  const objCellId = toObjCellId(blockX, blockY, cell);
 
-  console.log("objCellId");
-  console.log(objCellId);
+  const objCellId = (blockX << 24) | (blockY << 16) | cell;
+
   const pos = new Position(objCellId, originX, originY);
 
-  console.log(pos);
-  console.log(pos.landblock);
-
   return pos;
-
-  3014524992;
 };
