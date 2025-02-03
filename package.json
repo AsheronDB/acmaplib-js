@@ -6,11 +6,9 @@
   "author": "Jesse L.K. Overton <jesse@ovrtn.com> (https://ovrtn.com)",
   "license": "ISC",
   "files": [
-    "dist/*",
-    "types/*",
-    "src/*"
+    "dist/*"
   ],
-  "main": "./dist/acmaplib.umd.js",
+  "main": "./dist/acmaplib.umd.cjs",
   "module": "./dist/acmaplib.js",
   "scripts": {
     "dev": "tsc --noEmit --watch",
