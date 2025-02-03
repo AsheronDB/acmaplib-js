@@ -8,8 +8,10 @@
   "files": [
     "dist/*"
   ],
-  "main": "./dist/acmaplib.umd.cjs",
-  "module": "./dist/acmaplib.js",
+  "exports": {
+    "import": "./dist/acmaplib.js",
+    "require": "./dist/acmaplib.umd.cjs"
+  },
   "scripts": {
     "dev": "tsc --noEmit --watch",
     "build": "tsc && vite build",
@@ -18,7 +20,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/AsheronDB/acmaplib-js"
+    "url": "git://github.com/AsheronDB/acmaplib-js.git"
   },
   "devDependencies": {
     "typescript": "~5.6.2",

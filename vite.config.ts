@@ -14,10 +14,14 @@ export default defineConfig({
       name: "acmaplib",
       // the proper extensions will be added
       fileName: "acmaplib",
+      formats: ["es", "umd"],
     },
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled
       // into your library
+      output: {
+        interop: "auto",
+      },
     },
   },
 });
